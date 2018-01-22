@@ -23,17 +23,6 @@ typedef NS_ENUM(NSUInteger, SexType) {
     SexTypeWoman = 2,
 };
 
-typedef NS_ENUM(NSUInteger, QuestionType) {
-    /*！
-     视频问答
-     */
-    QuestionTypeVideo,
-    /*！
-     语音问答
-     */
-    QuestionTypeVoice,
-};
-
 
 
 

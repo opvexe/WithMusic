@@ -17,13 +17,6 @@
  */
 -(void)switchRootController{
     
-    [[RCIM sharedRCIM]connectWithToken:@"" success:^(NSString *userId) {
-        
-    } error:^(RCConnectErrorCode status) {
-        
-    } tokenIncorrect:^{
-        
-    }];
 }
 
 /*!
@@ -35,7 +28,7 @@
     
 }
 
-/*!
+/*! 
  *  融云
  */
 -(void)configRCIM{
@@ -46,10 +39,11 @@
     
     [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
     
-    [RCIM sharedRCIM].userInfoDataSource = UserDataSocure;
-    [RCIM sharedRCIM].groupInfoDataSource = UserDataSocure;
+    [RCIM sharedRCIM].userInfoDataSource  = UserDataSocure;
     
-    [[RCIM sharedRCIM] setScheme:@"rongCloudRedPacket" forExtensionModule:@"JrmfPacketManager"];
+    [RCIM sharedRCIM].groupInfoDataSource  = UserDataSocure;
+    
+    [[RCIM sharedRCIM] setScheme:@"rongCloudRedPacket" forExtensionModule:@"JrmfPacketManager"];        ///红包scheme
     
     [RCIM sharedRCIM].enableTypingStatus = YES;
     
