@@ -15,6 +15,11 @@
 		D0CB5A0C2015B7FA00B0A0D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB5A0B2015B7FA00B0A0D9 /* main.m */; };
 		D0CB5A162015B7FA00B0A0D9 /* WithMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB5A152015B7FA00B0A0D9 /* WithMusicTests.m */; };
 		D0CB5A212015B7FA00B0A0D9 /* WithMusicUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB5A202015B7FA00B0A0D9 /* WithMusicUITests.m */; };
+		D0CB5A3A2015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB5A392015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.m */; };
+		D0CB5A3E2015C54A00B0A0D9 /* LSWMUserDataSocure.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB5A3D2015C54A00B0A0D9 /* LSWMUserDataSocure.m */; };
+		D0CB5A412015D02A00B0A0D9 /* LSWMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB5A402015D02A00B0A0D9 /* LSWMModel.m */; };
+		D0CB5A462015D26300B0A0D9 /* LSWMGiftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB5A452015D26300B0A0D9 /* LSWMGiftModel.m */; };
+		D0CB5A4A2015D46F00B0A0D9 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB5A492015D46F00B0A0D9 /* Const.m */; };
 		EBED3BD0CF1D2C81B3C2BBFC /* libPods-WithMusicTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9053BE48C250E66A9AFA31 /* libPods-WithMusicTests.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +65,17 @@
 		D0CB5A302015B9CC00B0A0D9 /* WithMusic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WithMusic.entitlements; sourceTree = "<group>"; };
 		D0CB5A342015BC2F00B0A0D9 /* LSThirdLibKeyDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSThirdLibKeyDefines.h; sourceTree = "<group>"; };
 		D0CB5A362015BC7F00B0A0D9 /* LSFilesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSFilesManager.h; sourceTree = "<group>"; };
+		D0CB5A372015C13400B0A0D9 /* WithMusicPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WithMusicPrefixHeader.pch; sourceTree = "<group>"; };
+		D0CB5A382015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LSWMCategory.h"; sourceTree = "<group>"; };
+		D0CB5A392015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LSWMCategory.m"; sourceTree = "<group>"; };
+		D0CB5A3C2015C54A00B0A0D9 /* LSWMUserDataSocure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMUserDataSocure.h; sourceTree = "<group>"; };
+		D0CB5A3D2015C54A00B0A0D9 /* LSWMUserDataSocure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMUserDataSocure.m; sourceTree = "<group>"; };
+		D0CB5A3F2015D02A00B0A0D9 /* LSWMModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMModel.h; sourceTree = "<group>"; };
+		D0CB5A402015D02A00B0A0D9 /* LSWMModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMModel.m; sourceTree = "<group>"; };
+		D0CB5A442015D26300B0A0D9 /* LSWMGiftModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMGiftModel.h; sourceTree = "<group>"; };
+		D0CB5A452015D26300B0A0D9 /* LSWMGiftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMGiftModel.m; sourceTree = "<group>"; };
+		D0CB5A482015D46F00B0A0D9 /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
+		D0CB5A492015D46F00B0A0D9 /* Const.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
 		DB41742EA15AAC17FD085C10 /* Pods-WithMusicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WithMusicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WithMusicUITests/Pods-WithMusicUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +183,7 @@
 		D0CB5A2E2015B98300B0A0D9 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				D0CB5A422015D23F00B0A0D9 /* Pages */,
 				D0CB5A322015BA7300B0A0D9 /* Resources */,
 				D0CB5A312015B9F800B0A0D9 /* AppDelegate */,
 				D0CB5A2F2015B99F00B0A0D9 /* Utils */,
@@ -177,6 +194,7 @@
 		D0CB5A2F2015B99F00B0A0D9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D0CB5A3B2015C53E00B0A0D9 /* DataSocure */,
 				D0CB5A332015BB0A00B0A0D9 /* Definition */,
 			);
 			path = Utils;
@@ -188,6 +206,8 @@
 				D0CB5A0B2015B7FA00B0A0D9 /* main.m */,
 				D0CB59FC2015B7FA00B0A0D9 /* AppDelegate.h */,
 				D0CB59FD2015B7FA00B0A0D9 /* AppDelegate.m */,
+				D0CB5A382015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.h */,
+				D0CB5A392015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -204,10 +224,49 @@
 		D0CB5A332015BB0A00B0A0D9 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
+				D0CB5A372015C13400B0A0D9 /* WithMusicPrefixHeader.pch */,
 				D0CB5A362015BC7F00B0A0D9 /* LSFilesManager.h */,
 				D0CB5A342015BC2F00B0A0D9 /* LSThirdLibKeyDefines.h */,
 			);
 			path = Definition;
+			sourceTree = "<group>";
+		};
+		D0CB5A3B2015C53E00B0A0D9 /* DataSocure */ = {
+			isa = PBXGroup;
+			children = (
+				D0CB5A3C2015C54A00B0A0D9 /* LSWMUserDataSocure.h */,
+				D0CB5A3D2015C54A00B0A0D9 /* LSWMUserDataSocure.m */,
+				D0CB5A3F2015D02A00B0A0D9 /* LSWMModel.h */,
+				D0CB5A402015D02A00B0A0D9 /* LSWMModel.m */,
+			);
+			path = DataSocure;
+			sourceTree = "<group>";
+		};
+		D0CB5A422015D23F00B0A0D9 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				D0CB5A472015D46400B0A0D9 /* Const */,
+				D0CB5A432015D25500B0A0D9 /* Message */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		D0CB5A432015D25500B0A0D9 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				D0CB5A442015D26300B0A0D9 /* LSWMGiftModel.h */,
+				D0CB5A452015D26300B0A0D9 /* LSWMGiftModel.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		D0CB5A472015D46400B0A0D9 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				D0CB5A482015D46F00B0A0D9 /* Const.h */,
+				D0CB5A492015D46F00B0A0D9 /* Const.m */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,7 +570,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CB5A3E2015C54A00B0A0D9 /* LSWMUserDataSocure.m in Sources */,
 				D0CB5A0C2015B7FA00B0A0D9 /* main.m in Sources */,
+				D0CB5A412015D02A00B0A0D9 /* LSWMModel.m in Sources */,
+				D0CB5A3A2015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.m in Sources */,
+				D0CB5A4A2015D46F00B0A0D9 /* Const.m in Sources */,
+				D0CB5A462015D26300B0A0D9 /* LSWMGiftModel.m in Sources */,
 				D0CB59FE2015B7FA00B0A0D9 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,6 +735,7 @@
 				CODE_SIGN_ENTITLEMENTS = WithMusic/WithMusic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NJC3EGBWR;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WithMusic/Class/Utils/Definition/WithMusicPrefixHeader.pch";
 				INFOPLIST_FILE = WithMusic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -688,6 +753,7 @@
 				CODE_SIGN_ENTITLEMENTS = WithMusic/WithMusic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NJC3EGBWR;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WithMusic/Class/Utils/Definition/WithMusicPrefixHeader.pch";
 				INFOPLIST_FILE = WithMusic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
