@@ -224,8 +224,8 @@
 		D0CB5A332015BB0A00B0A0D9 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
-				D0CB5A372015C13400B0A0D9 /* WithMusicPrefixHeader.pch */,
 				D0CB5A362015BC7F00B0A0D9 /* LSFilesManager.h */,
+				D0CB5A372015C13400B0A0D9 /* WithMusicPrefixHeader.pch */,
 				D0CB5A342015BC2F00B0A0D9 /* LSThirdLibKeyDefines.h */,
 			);
 			path = Definition;

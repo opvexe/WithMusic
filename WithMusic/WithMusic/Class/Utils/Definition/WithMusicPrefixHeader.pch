@@ -11,5 +11,6 @@
 
 #import "LSFilesManager.h"
 #import "LSThirdLibKeyDefines.h"
+#import "Const.h"
 
 #endif /* WithMusicPrefixHeader_pch */

@@ -19,4 +19,7 @@ target 'WithMusic' do
 
 pod 'RongCloudIM/IMLib'
 pod 'RongCloudIM/IMKit'
+pod 'Masonry'
+pod 'MJExtension'
+
 end

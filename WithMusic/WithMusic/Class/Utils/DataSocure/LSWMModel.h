@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, SexType) {
+    /*！
+     男
+     */
+    SexTypeMan = 1,
+    /*！
+     女
+     */
+    SexTypeWoman = 2,
+};
+
+
 @interface LSWMModel : NSObject
 
 /**

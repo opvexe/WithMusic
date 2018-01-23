@@ -20,6 +20,8 @@
  */
 -(void)registrationThirdLib;
 
-
+/*!
+ *  注册推送通知
+ */
 - (BOOL)application:(UIApplication *)application Options:(NSDictionary *)launchOptions;
 @end

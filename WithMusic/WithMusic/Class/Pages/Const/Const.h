@@ -12,16 +12,8 @@
 
 #endif
 
-typedef NS_ENUM(NSUInteger, SexType) {
-    /*！
-     男
-     */
-    SexTypeMan = 1,
-    /*！
-     女
-     */
-    SexTypeWoman = 2,
-};
+
+
 
 
 
