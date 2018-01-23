@@ -16,7 +16,10 @@
 
 @implementation LSWMLoginViewController
 
-static void extracted(LSWMLoginViewController *object) {
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
     [LSWMNetworkUtil GetTokenWithUserID:@"111" username:@"SHUMIN" headurl:@"http://pic26.photophoto.cn/20130323/0005018467298586_b.jpg" success:^(id responseObject) {
         NSString *token = responseObject[@"data"];
         
@@ -29,27 +32,19 @@ static void extracted(LSWMLoginViewController *object) {
                                         [RCIMClient sharedRCIMClient].currentUserInfo  = [[RCUserInfo alloc] initWithUserId:userId name:@"SHUMIN" portrait:@"http://pic26.photophoto.cn/20130323/0005018467298586_b.jpg"];
                                         
                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                            [object switchRootController];
+                                            [self switchRootController];
                                         });
                                         
                                     } error:^(RCConnectErrorCode status) {
                                         NSLog(@"RCConnectErrorCode--%ld",status);
                                         
                                     } tokenIncorrect:^{
-                                        
+                                        NSLog(@"tokenIncorrect");
                                     }];
         
     } failure:^(NSError *error) {
-        
-        NSLog(@"%@",error);
-    }];
-}
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    extracted(self);
+    }];
     
 }
 
