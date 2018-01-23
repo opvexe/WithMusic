@@ -21,5 +21,7 @@ pod 'RongCloudIM/IMLib'
 pod 'RongCloudIM/IMKit'
 pod 'Masonry'
 pod 'MJExtension'
+pod 'MJRefresh'
+pod 'AFNetworking'
 
 end

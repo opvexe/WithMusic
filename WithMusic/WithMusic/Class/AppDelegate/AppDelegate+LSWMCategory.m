@@ -8,7 +8,7 @@
 
 #import "AppDelegate+LSWMCategory.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "LSWMGiftModel.h"
+#import "LSWMLoginViewController.h"
 
 @implementation AppDelegate (LSWMCategory)
 
@@ -16,7 +16,7 @@
  *  切换根视图
  */
 -(void)switchRootController{
-    
+     self.window.rootViewController   = [[LSWMLoginViewController alloc] init];
 }
 
 /*!
@@ -66,22 +66,8 @@
      * 注册自定义消息
      */
     
-    [[RCIM sharedRCIM] registerMessageType:[LSWMGiftModel class]];      ///礼物消息
+    [[RCIM sharedRCIM] registerMessageType:[NSClassFromString(@"LSWMGiftModel") class]];      ///礼物消息
     
-    /*！
-     * 登录
-     */
-    [[RCIM sharedRCIM] connectWithToken:@"偏好设置获取Token"
-                                success:^(NSString *userId) {
-                                    NSLog(@"主控制器");
-                                    
-                                } error:^(RCConnectErrorCode status) {
-                                    NSLog(@"登录界面");
-                                    
-                                } tokenIncorrect:^{
-                                    NSLog(@"登录界面");
-                                    
-                                }];
 }
 
 - (BOOL)application:(UIApplication *)application Options:(NSDictionary *)launchOptions{

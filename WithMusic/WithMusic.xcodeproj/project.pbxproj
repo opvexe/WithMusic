@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		26932244B2D31134AFC3927C /* libPods-WithMusicUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D1C4C66D38F5DB1E239CCE /* libPods-WithMusicUITests.a */; };
 		9BC9FDFF2EA3DD7513B73F5C /* libPods-WithMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70445FBADE2B2FC04DD782ED /* libPods-WithMusic.a */; };
+		D02828D22016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828D12016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m */; };
+		D02828D72016C48100EFACC1 /* LSWMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828D62016C48100EFACC1 /* LSWMLoginViewController.m */; };
+		D02828DB2016C60500EFACC1 /* LSWMNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828DA2016C60500EFACC1 /* LSWMNetworkUtil.m */; };
+		D02828DE2016C66500EFACC1 /* AFHTTPSessionManager+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828DD2016C66500EFACC1 /* AFHTTPSessionManager+Category.m */; };
 		D0CB59FE2015B7FA00B0A0D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB59FD2015B7FA00B0A0D9 /* AppDelegate.m */; };
 		D0CB5A062015B7FA00B0A0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CB5A052015B7FA00B0A0D9 /* Assets.xcassets */; };
 		D0CB5A092015B7FA00B0A0D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CB5A072015B7FA00B0A0D9 /* LaunchScreen.storyboard */; };
@@ -49,6 +53,14 @@
 		70445FBADE2B2FC04DD782ED /* libPods-WithMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WithMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F29AE21F92D3DC77527CA1 /* Pods-WithMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WithMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-WithMusic/Pods-WithMusic.release.xcconfig"; sourceTree = "<group>"; };
 		CA9053BE48C250E66A9AFA31 /* libPods-WithMusicTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WithMusicTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02828D02016C23C00EFACC1 /* LSWMessageCoversationListMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMessageCoversationListMViewController.h; sourceTree = "<group>"; };
+		D02828D12016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMessageCoversationListMViewController.m; sourceTree = "<group>"; };
+		D02828D52016C48100EFACC1 /* LSWMLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMLoginViewController.h; sourceTree = "<group>"; };
+		D02828D62016C48100EFACC1 /* LSWMLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMLoginViewController.m; sourceTree = "<group>"; };
+		D02828D92016C60500EFACC1 /* LSWMNetworkUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMNetworkUtil.h; sourceTree = "<group>"; };
+		D02828DA2016C60500EFACC1 /* LSWMNetworkUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMNetworkUtil.m; sourceTree = "<group>"; };
+		D02828DC2016C66500EFACC1 /* AFHTTPSessionManager+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+Category.h"; sourceTree = "<group>"; };
+		D02828DD2016C66500EFACC1 /* AFHTTPSessionManager+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+Category.m"; sourceTree = "<group>"; };
 		D0CB59F92015B7FA00B0A0D9 /* WithMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WithMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CB59FC2015B7FA00B0A0D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0CB59FD2015B7FA00B0A0D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -130,6 +142,35 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D02828D32016C24700EFACC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0CB5A442015D26300B0A0D9 /* LSWMGiftModel.h */,
+				D0CB5A452015D26300B0A0D9 /* LSWMGiftModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D02828D42016C47900EFACC1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D02828D52016C48100EFACC1 /* LSWMLoginViewController.h */,
+				D02828D62016C48100EFACC1 /* LSWMLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D02828D82016C5D900EFACC1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D02828D92016C60500EFACC1 /* LSWMNetworkUtil.h */,
+				D02828DA2016C60500EFACC1 /* LSWMNetworkUtil.m */,
+				D02828DC2016C66500EFACC1 /* AFHTTPSessionManager+Category.h */,
+				D02828DD2016C66500EFACC1 /* AFHTTPSessionManager+Category.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		D0CB59F02015B7FA00B0A0D9 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +235,7 @@
 		D0CB5A2F2015B99F00B0A0D9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D02828D82016C5D900EFACC1 /* Network */,
 				D0CB5A3B2015C53E00B0A0D9 /* DataSocure */,
 				D0CB5A332015BB0A00B0A0D9 /* Definition */,
 			);
@@ -245,6 +287,7 @@
 		D0CB5A422015D23F00B0A0D9 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				D02828D42016C47900EFACC1 /* Login */,
 				D0CB5A472015D46400B0A0D9 /* Const */,
 				D0CB5A432015D25500B0A0D9 /* Message */,
 			);
@@ -254,8 +297,9 @@
 		D0CB5A432015D25500B0A0D9 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				D0CB5A442015D26300B0A0D9 /* LSWMGiftModel.h */,
-				D0CB5A452015D26300B0A0D9 /* LSWMGiftModel.m */,
+				D02828D32016C24700EFACC1 /* Model */,
+				D02828D02016C23C00EFACC1 /* LSWMessageCoversationListMViewController.h */,
+				D02828D12016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -500,6 +544,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WithMusic/Pods-WithMusic-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
@@ -571,12 +616,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0CB5A3E2015C54A00B0A0D9 /* LSWMUserDataSocure.m in Sources */,
+				D02828D72016C48100EFACC1 /* LSWMLoginViewController.m in Sources */,
 				D0CB5A0C2015B7FA00B0A0D9 /* main.m in Sources */,
 				D0CB5A412015D02A00B0A0D9 /* LSWMModel.m in Sources */,
 				D0CB5A3A2015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.m in Sources */,
+				D02828DB2016C60500EFACC1 /* LSWMNetworkUtil.m in Sources */,
 				D0CB5A4A2015D46F00B0A0D9 /* Const.m in Sources */,
+				D02828D22016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m in Sources */,
 				D0CB5A462015D26300B0A0D9 /* LSWMGiftModel.m in Sources */,
 				D0CB59FE2015B7FA00B0A0D9 /* AppDelegate.m in Sources */,
+				D02828DE2016C66500EFACC1 /* AFHTTPSessionManager+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

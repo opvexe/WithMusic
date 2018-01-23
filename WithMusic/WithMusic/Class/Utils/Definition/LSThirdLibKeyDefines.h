@@ -11,4 +11,18 @@
 
 #define RONGCLOUD_IM_APPKEY @"pwe86ga5pie06"
 
+/**
+ 字符
+ */
+#define FormatString(string, args...)       [NSString stringWithFormat:string, args]
+
+/**
+ HOST
+ */
+#define HOST_API_URL @"http://47.97.7.23:8090"
+/**
+ 验证tokent
+ */
+#define GetTokentAuthenticationURL      FormatString(@"%@/authentication",HOST_API_URL)
+
 #endif /* LSThirdLibKeyDefines_h */
