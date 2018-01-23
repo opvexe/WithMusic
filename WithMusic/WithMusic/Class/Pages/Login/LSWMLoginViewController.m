@@ -49,7 +49,9 @@
 }
 
 -(void)switchRootController{
-    [UIApplication sharedApplication].delegate.window.rootViewController = [LSWMessageCoversationListMViewController new];
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[LSWMessageCoversationListMViewController new]];
+    [UIApplication sharedApplication].delegate.window.rootViewController = nav;
 }
 
 @end

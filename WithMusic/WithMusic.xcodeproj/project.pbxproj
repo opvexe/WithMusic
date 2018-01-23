@@ -13,6 +13,13 @@
 		D02828D72016C48100EFACC1 /* LSWMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828D62016C48100EFACC1 /* LSWMLoginViewController.m */; };
 		D02828DB2016C60500EFACC1 /* LSWMNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828DA2016C60500EFACC1 /* LSWMNetworkUtil.m */; };
 		D02828DE2016C66500EFACC1 /* AFHTTPSessionManager+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828DD2016C66500EFACC1 /* AFHTTPSessionManager+Category.m */; };
+		D02828E12016D31600EFACC1 /* LSWMSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828E02016D31600EFACC1 /* LSWMSearchBar.m */; };
+		D02828E52016D36700EFACC1 /* LSWMTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828E42016D36700EFACC1 /* LSWMTools.m */; };
+		D02828EF2016D71200EFACC1 /* CommonMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828E82016D71200EFACC1 /* CommonMenuView.m */; };
+		D02828F02016D71200EFACC1 /* MenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828EA2016D71200EFACC1 /* MenuModel.m */; };
+		D02828F12016D71200EFACC1 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828EC2016D71200EFACC1 /* MenuTableViewCell.m */; };
+		D02828F22016D71200EFACC1 /* UIView+AdjustFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828EE2016D71200EFACC1 /* UIView+AdjustFrame.m */; };
+		D02828F62016DA6B00EFACC1 /* LSWMChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828F52016DA6B00EFACC1 /* LSWMChatViewController.m */; };
 		D0CB59FE2015B7FA00B0A0D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB59FD2015B7FA00B0A0D9 /* AppDelegate.m */; };
 		D0CB5A062015B7FA00B0A0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CB5A052015B7FA00B0A0D9 /* Assets.xcassets */; };
 		D0CB5A092015B7FA00B0A0D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CB5A072015B7FA00B0A0D9 /* LaunchScreen.storyboard */; };
@@ -61,6 +68,20 @@
 		D02828DA2016C60500EFACC1 /* LSWMNetworkUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMNetworkUtil.m; sourceTree = "<group>"; };
 		D02828DC2016C66500EFACC1 /* AFHTTPSessionManager+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+Category.h"; sourceTree = "<group>"; };
 		D02828DD2016C66500EFACC1 /* AFHTTPSessionManager+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+Category.m"; sourceTree = "<group>"; };
+		D02828DF2016D31600EFACC1 /* LSWMSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMSearchBar.h; sourceTree = "<group>"; };
+		D02828E02016D31600EFACC1 /* LSWMSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMSearchBar.m; sourceTree = "<group>"; };
+		D02828E32016D36700EFACC1 /* LSWMTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMTools.h; sourceTree = "<group>"; };
+		D02828E42016D36700EFACC1 /* LSWMTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMTools.m; sourceTree = "<group>"; };
+		D02828E72016D71200EFACC1 /* CommonMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMenuView.h; sourceTree = "<group>"; };
+		D02828E82016D71200EFACC1 /* CommonMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonMenuView.m; sourceTree = "<group>"; };
+		D02828E92016D71200EFACC1 /* MenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuModel.h; sourceTree = "<group>"; };
+		D02828EA2016D71200EFACC1 /* MenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuModel.m; sourceTree = "<group>"; };
+		D02828EB2016D71200EFACC1 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		D02828EC2016D71200EFACC1 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		D02828ED2016D71200EFACC1 /* UIView+AdjustFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AdjustFrame.h"; sourceTree = "<group>"; };
+		D02828EE2016D71200EFACC1 /* UIView+AdjustFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AdjustFrame.m"; sourceTree = "<group>"; };
+		D02828F42016DA6B00EFACC1 /* LSWMChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMChatViewController.h; sourceTree = "<group>"; };
+		D02828F52016DA6B00EFACC1 /* LSWMChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMChatViewController.m; sourceTree = "<group>"; };
 		D0CB59F92015B7FA00B0A0D9 /* WithMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WithMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CB59FC2015B7FA00B0A0D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0CB59FD2015B7FA00B0A0D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,6 +192,39 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		D02828E22016D35600EFACC1 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D02828E32016D36700EFACC1 /* LSWMTools.h */,
+				D02828E42016D36700EFACC1 /* LSWMTools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		D02828E62016D71200EFACC1 /* PopMenuTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D02828E72016D71200EFACC1 /* CommonMenuView.h */,
+				D02828E82016D71200EFACC1 /* CommonMenuView.m */,
+				D02828E92016D71200EFACC1 /* MenuModel.h */,
+				D02828EA2016D71200EFACC1 /* MenuModel.m */,
+				D02828EB2016D71200EFACC1 /* MenuTableViewCell.h */,
+				D02828EC2016D71200EFACC1 /* MenuTableViewCell.m */,
+				D02828ED2016D71200EFACC1 /* UIView+AdjustFrame.h */,
+				D02828EE2016D71200EFACC1 /* UIView+AdjustFrame.m */,
+			);
+			path = PopMenuTableView;
+			sourceTree = "<group>";
+		};
+		D02828F32016DA6000EFACC1 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				D02828F42016DA6B00EFACC1 /* LSWMChatViewController.h */,
+				D02828F52016DA6B00EFACC1 /* LSWMChatViewController.m */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		D0CB59F02015B7FA00B0A0D9 = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +289,8 @@
 		D0CB5A2F2015B99F00B0A0D9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D02828E62016D71200EFACC1 /* PopMenuTableView */,
+				D02828E22016D35600EFACC1 /* Tools */,
 				D02828D82016C5D900EFACC1 /* Network */,
 				D0CB5A3B2015C53E00B0A0D9 /* DataSocure */,
 				D0CB5A332015BB0A00B0A0D9 /* Definition */,
@@ -287,6 +343,7 @@
 		D0CB5A422015D23F00B0A0D9 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				D02828F32016DA6000EFACC1 /* Chat */,
 				D02828D42016C47900EFACC1 /* Login */,
 				D0CB5A472015D46400B0A0D9 /* Const */,
 				D0CB5A432015D25500B0A0D9 /* Message */,
@@ -300,6 +357,8 @@
 				D02828D32016C24700EFACC1 /* Model */,
 				D02828D02016C23C00EFACC1 /* LSWMessageCoversationListMViewController.h */,
 				D02828D12016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m */,
+				D02828DF2016D31600EFACC1 /* LSWMSearchBar.h */,
+				D02828E02016D31600EFACC1 /* LSWMSearchBar.m */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -617,15 +676,22 @@
 			files = (
 				D0CB5A3E2015C54A00B0A0D9 /* LSWMUserDataSocure.m in Sources */,
 				D02828D72016C48100EFACC1 /* LSWMLoginViewController.m in Sources */,
+				D02828EF2016D71200EFACC1 /* CommonMenuView.m in Sources */,
 				D0CB5A0C2015B7FA00B0A0D9 /* main.m in Sources */,
 				D0CB5A412015D02A00B0A0D9 /* LSWMModel.m in Sources */,
 				D0CB5A3A2015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.m in Sources */,
+				D02828F12016D71200EFACC1 /* MenuTableViewCell.m in Sources */,
 				D02828DB2016C60500EFACC1 /* LSWMNetworkUtil.m in Sources */,
+				D02828F02016D71200EFACC1 /* MenuModel.m in Sources */,
+				D02828F22016D71200EFACC1 /* UIView+AdjustFrame.m in Sources */,
 				D0CB5A4A2015D46F00B0A0D9 /* Const.m in Sources */,
 				D02828D22016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m in Sources */,
+				D02828E12016D31600EFACC1 /* LSWMSearchBar.m in Sources */,
+				D02828E52016D36700EFACC1 /* LSWMTools.m in Sources */,
 				D0CB5A462015D26300B0A0D9 /* LSWMGiftModel.m in Sources */,
 				D0CB59FE2015B7FA00B0A0D9 /* AppDelegate.m in Sources */,
 				D02828DE2016C66500EFACC1 /* AFHTTPSessionManager+Category.m in Sources */,
+				D02828F62016DA6B00EFACC1 /* LSWMChatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

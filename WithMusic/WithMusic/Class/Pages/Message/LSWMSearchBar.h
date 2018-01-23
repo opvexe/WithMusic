@@ -1,5 +1,5 @@
 //
-//  LSWMessageCoversationListMViewController.h
+//  LSWMSearchBar.h
 //  WithMusic
 //
 //  Created by Facebook on 2018/1/23.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LSWMessageCoversationListMViewController : RCConversationListViewController
+@interface LSWMSearchBar : UISearchBar
 
 @end
