@@ -7,7 +7,8 @@
 //
 
 #import "LSWMChatViewController.h"
-
+#import "LSWMGiftTableViewCell.h"
+#import "LSWMGiftModel.h"
 @interface LSWMChatViewController ()
 
 @end
@@ -16,22 +17,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self customCell];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)customCell{
+    
+    self.unReadMessageLabel.textColor = Maser_Color;
+    [self.unReadButton setTitleColor:Maser_Color forState:UIControlStateNormal];
+    [self.unReadButton setTitleColor:Maser_Color forState:UIControlStateHighlighted];
+    [self.unReadButton setTitleColor:Maser_Color forState:UIControlStateSelected];
+    [self.unReadButton setTitleColor:Maser_Color forState:UIControlStateDisabled];
+    
+    
+    [self registerClass:[LSWMGiftTableViewCell class]
+        forMessageClass:[LSWMGiftModel class]];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(RCMessageBaseCell *)rcConversationCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    RCMessageModel *model = self.conversationDataRepository[indexPath.row];
+    
+   LSWMGiftTableViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:APPGiftMessageTypeIdentifier forIndexPath:indexPath];
+    
+    [cell  setModel:model];
+    
+    return cell;
 }
-*/
+
 
 @end

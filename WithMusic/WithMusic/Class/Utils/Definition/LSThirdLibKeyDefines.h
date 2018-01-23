@@ -35,4 +35,7 @@
 #define WSSTRONG(strongSelf) __strong typeof(weakSelf) strongSelf = weakSelf;
 
 
+
+#define   Maser_Color  UIColorFromRGB(0xFF758C)
+
 #endif /* LSThirdLibKeyDefines_h */

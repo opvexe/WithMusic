@@ -11,7 +11,6 @@
 
 @implementation LSWMSearchBar
 
-
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

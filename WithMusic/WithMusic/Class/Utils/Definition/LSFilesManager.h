@@ -23,6 +23,9 @@
 #import <AFNetworking.h>
 #import <MJExtension.h>
 #import <Masonry.h>
+#import <SDWebImage/SDImageCache.h>
+#import <FLAnimatedImageView.h>
+
 /*！
  * 自定义
  */

@@ -20,6 +20,7 @@
 		D02828F12016D71200EFACC1 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828EC2016D71200EFACC1 /* MenuTableViewCell.m */; };
 		D02828F22016D71200EFACC1 /* UIView+AdjustFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828EE2016D71200EFACC1 /* UIView+AdjustFrame.m */; };
 		D02828F62016DA6B00EFACC1 /* LSWMChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828F52016DA6B00EFACC1 /* LSWMChatViewController.m */; };
+		D02828FA2016E12F00EFACC1 /* LSWMGiftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828F92016E12F00EFACC1 /* LSWMGiftTableViewCell.m */; };
 		D0CB59FE2015B7FA00B0A0D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CB59FD2015B7FA00B0A0D9 /* AppDelegate.m */; };
 		D0CB5A062015B7FA00B0A0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CB5A052015B7FA00B0A0D9 /* Assets.xcassets */; };
 		D0CB5A092015B7FA00B0A0D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CB5A072015B7FA00B0A0D9 /* LaunchScreen.storyboard */; };
@@ -82,6 +83,8 @@
 		D02828EE2016D71200EFACC1 /* UIView+AdjustFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AdjustFrame.m"; sourceTree = "<group>"; };
 		D02828F42016DA6B00EFACC1 /* LSWMChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMChatViewController.h; sourceTree = "<group>"; };
 		D02828F52016DA6B00EFACC1 /* LSWMChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMChatViewController.m; sourceTree = "<group>"; };
+		D02828F82016E12F00EFACC1 /* LSWMGiftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMGiftTableViewCell.h; sourceTree = "<group>"; };
+		D02828F92016E12F00EFACC1 /* LSWMGiftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMGiftTableViewCell.m; sourceTree = "<group>"; };
 		D0CB59F92015B7FA00B0A0D9 /* WithMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WithMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CB59FC2015B7FA00B0A0D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0CB59FD2015B7FA00B0A0D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -219,10 +222,20 @@
 		D02828F32016DA6000EFACC1 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				D02828F72016E0FD00EFACC1 /* Cell */,
 				D02828F42016DA6B00EFACC1 /* LSWMChatViewController.h */,
 				D02828F52016DA6B00EFACC1 /* LSWMChatViewController.m */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		D02828F72016E0FD00EFACC1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D02828F82016E12F00EFACC1 /* LSWMGiftTableViewCell.h */,
+				D02828F92016E12F00EFACC1 /* LSWMGiftTableViewCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D0CB59F02015B7FA00B0A0D9 = {
@@ -675,6 +688,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0CB5A3E2015C54A00B0A0D9 /* LSWMUserDataSocure.m in Sources */,
+				D02828FA2016E12F00EFACC1 /* LSWMGiftTableViewCell.m in Sources */,
 				D02828D72016C48100EFACC1 /* LSWMLoginViewController.m in Sources */,
 				D02828EF2016D71200EFACC1 /* CommonMenuView.m in Sources */,
 				D0CB5A0C2015B7FA00B0A0D9 /* main.m in Sources */,

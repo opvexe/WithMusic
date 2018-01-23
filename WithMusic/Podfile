@@ -23,5 +23,6 @@ pod 'Masonry'
 pod 'MJExtension'
 pod 'MJRefresh'
 pod 'AFNetworking'
-
+pod 'SDWebImage'
+pod 'SDWebImage/GIF'
 end
