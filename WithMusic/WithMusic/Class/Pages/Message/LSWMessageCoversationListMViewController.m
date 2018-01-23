@@ -11,7 +11,9 @@
 #import "CommonMenuView.h"
 #import "LSWMChatViewController.h"
 
+
 @interface LSWMessageCoversationListMViewController ()<UISearchBarDelegate>
+@property(nonatomic, strong) UINavigationController *searchNavigationController;
 @property(nonatomic, strong) LSWMSearchBar *searchBar;
 @property(nonatomic, strong) UIView *headerView;
 @property(nonatomic, assign) NSUInteger index;
@@ -225,6 +227,47 @@
     [self.conversationListTableView reloadData];
 }
 
+//自定义Cell
+//- (RCConversationBaseCell *)rcConversationListTableView:(UITableView *)tableView
+//                                  cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//}
+
+//收到消息监听
+- (void)didReceiveMessageNotification:(NSNotification *)notification {
+    
+    
+}
+
+//自定义Model
+- (NSMutableArray *)willReloadTableData:(NSMutableArray *)dataSource {
+    for (int i = 0; i < dataSource.count; i++) {
+        RCConversationModel *model = dataSource[i];
+        //筛选请求添加好友的系统消息，用于生成自定义会话类型的cell
+        if (model.conversationType == ConversationType_SYSTEM &&
+            [model.lastestMessage isMemberOfClass:[RCContactNotificationMessage class]]) {
+            model.conversationModelType = RC_CONVERSATION_MODEL_TYPE_CUSTOMIZATION;
+        }
+        if ([model.lastestMessage isKindOfClass:[RCGroupNotificationMessage class]]) {
+            RCGroupNotificationMessage *groupNotification = (RCGroupNotificationMessage *)model.lastestMessage;
+            if ([groupNotification.operation isEqualToString:@"Quit"]) {        /// Quit 有成员退出群组的通知
+                NSData *jsonData = [groupNotification.data dataUsingEncoding:NSUTF8StringEncoding];
+                NSDictionary *dictionary =
+                [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+                NSDictionary *data =
+                [dictionary[@"data"] isKindOfClass:[NSDictionary class]] ? dictionary[@"data"] : nil;
+                NSString *nickName =
+                [data[@"operatorNickname"] isKindOfClass:[NSString class]] ? data[@"operatorNickname"] : nil;
+                if ([nickName isEqualToString:[RCIM sharedRCIM].currentUserInfo.name]) {
+                    [[RCIMClient sharedRCIMClient] removeConversation:model.conversationType targetId:model.targetId];
+                    [self refreshConversationTableViewIfNeeded];
+                }
+            }
+        }
+    }
+    return dataSource;
+}
+
+//点击Cell
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
          conversationModel:(RCConversationModel *)model
                atIndexPath:(NSIndexPath *)indexPath {
@@ -242,16 +285,16 @@
              */
         case RC_CONVERSATION_MODEL_TYPE_NORMAL:
         {
-                LSWMChatViewController *chatView = [LSWMChatViewController new];
-                chatView.conversationType = model.conversationType;
-                chatView.targetId = model.targetId;
-                chatView.title = model.conversationTitle;
-                chatView.conversation = model;
-                chatView.unReadMessage = model.unreadMessageCount;
-                chatView.enableNewComingMessageIcon = YES; //开启消息提醒
-                chatView.enableUnreadMessageIcon = YES;
-                chatView.displayUserNameInCell = NO;
-                [self.navigationController pushViewController:chatView animated:YES];
+            LSWMChatViewController *chatView = [LSWMChatViewController new];
+            chatView.conversationType = model.conversationType;
+            chatView.targetId = model.targetId;
+            chatView.title = model.conversationTitle;
+            chatView.conversation = model;
+            chatView.unReadMessage = model.unreadMessageCount;
+            chatView.enableNewComingMessageIcon = YES; //开启消息提醒
+            chatView.enableUnreadMessageIcon = YES;
+            chatView.displayUserNameInCell = NO;
+            [self.navigationController pushViewController:chatView animated:YES];
         }
             break;
             /*!
@@ -275,41 +318,27 @@
         default:
             break;
     }
-    
-    
 }
-
 //高度
 - (CGFloat)rcConversationListTableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 67.0f;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 #pragma mark UISearchBarDelegate
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    //    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    //    RCDSearchViewController *searchViewController = [[RCDSearchViewController alloc] init];
-    //    self.searchNavigationController = [[UINavigationController alloc] initWithRootViewController:searchViewController];
-    //    searchViewController.delegate = self;
-    //    [self.navigationController.view addSubview:self.searchNavigationController.view];
+//        [self.navigationController setNavigationBarHidden:YES animated:YES];
+//        RCDSearchViewController *searchViewController = [[RCDSearchViewController alloc] init];
+//        self.searchNavigationController = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+//        searchViewController.delegate = self;
+//        [self.navigationController.view addSubview:self.searchNavigationController.view];
 }
 
 - (void)onSearchCancelClick {
-    //    [self.searchNavigationController.view removeFromSuperview];
-    //    [self.searchNavigationController removeFromParentViewController];
-    //    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    //    [self refreshConversationTableViewIfNeeded];
+        [self.searchNavigationController.view removeFromSuperview];
+        [self.searchNavigationController removeFromParentViewController];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self refreshConversationTableViewIfNeeded];
 }
 
 
