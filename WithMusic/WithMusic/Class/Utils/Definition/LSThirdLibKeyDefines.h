@@ -37,5 +37,5 @@
 
 
 #define   Maser_Color  UIColorFromRGB(0xFF758C)
-
+#define   ButtonBGColor UIColorFromRGB(0x9367ff)
 #endif /* LSThirdLibKeyDefines_h */

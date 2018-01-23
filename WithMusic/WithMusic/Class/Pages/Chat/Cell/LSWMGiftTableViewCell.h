@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LSWMAnimationLabel.h"
 
 @interface LSWMGiftTableViewCell : RCMessageCell
 
@@ -14,4 +15,5 @@
 
 @property(nonatomic,strong)UILabel *contenLabel;
 
+@property(nonatomic,strong)LSWMAnimationLabel *tipLabel;
 @end

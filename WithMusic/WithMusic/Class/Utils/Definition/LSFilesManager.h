@@ -23,7 +23,7 @@
 #import <AFNetworking.h>
 #import <MJExtension.h>
 #import <Masonry.h>
-#import <SDWebImage/SDImageCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import <FLAnimatedImageView.h>
 
 /*！

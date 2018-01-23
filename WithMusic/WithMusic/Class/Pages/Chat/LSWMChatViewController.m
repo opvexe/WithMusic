@@ -18,8 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customCell];
+    [self scrollToBottomAnimated:YES];
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
 }
 
+/*!
+ * 自定义Cell
+ */
 -(void)customCell{
     
     self.unReadMessageLabel.textColor = Maser_Color;
@@ -28,11 +34,17 @@
     [self.unReadButton setTitleColor:Maser_Color forState:UIControlStateSelected];
     [self.unReadButton setTitleColor:Maser_Color forState:UIControlStateDisabled];
     
-    
-    [self registerClass:[LSWMGiftTableViewCell class]
-        forMessageClass:[LSWMGiftModel class]];
+    [self registerClass:[LSWMGiftTableViewCell class] forMessageClass:[LSWMGiftModel class]];
     
 }
+
+/*!
+ * 返回
+ */
+-(void)backAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 -(RCMessageBaseCell *)rcConversationCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     RCMessageModel *model = self.conversationDataRepository[indexPath.row];

@@ -8,12 +8,10 @@
 
 #import "LSWMGiftTableViewCell.h"
 #import "LSWMGiftModel.h"
-@interface LSWMGiftTableViewCell()
-
-@end
 
 #define GIFWIDTH           90
 #define ContentHeight      20
+#define URLFromString(str)                      [NSURL URLWithString:str]
 
 @implementation LSWMGiftTableViewCell
 
@@ -52,7 +50,12 @@
     self.contenLabel.textColor = Maser_Color;
     [self.messageContentView addSubview:self.contenLabel];
     
-    
+    self.tipLabel = [[LSWMAnimationLabel alloc] init];
+    self.tipLabel.textColor = ButtonBGColor;
+    self.tipLabel.font = [UIFont systemFontOfSize:12.0];
+    self.tipLabel.textAlignment = NSTextAlignmentCenter;
+    self.tipLabel.hidden =YES;
+    [self.messageContentView addSubview:self.tipLabel];
     
     UITapGestureRecognizer *longPress =
     [[UITapGestureRecognizer alloc]
@@ -115,10 +118,45 @@
 
 - (void)setAutoLayout {
     
+    CGRect messageContentViewRect = self.messageContentView.frame;
     
-    
-    
-    
+    LSWMGiftModel *testMessage = (LSWMGiftModel *)self.model.content;
+    CGSize textLabelSize = [[self class] getTextLabelSize:testMessage];
+    NSString *title =@"";
+    NSString *tip  =@"";
+    if (MessageDirection_RECEIVE == self.messageDirection) {
+        self.gifImageView.frame =
+        CGRectMake(0,0,GIFWIDTH , GIFWIDTH);
+        self.contenLabel.frame =CGRectMake(0,CGRectGetMaxY(self.gifImageView.frame),GIFWIDTH , ContentHeight);
+        self.tipLabel.frame =CGRectMake(CGRectGetWidth(self.gifImageView.frame),CGRectGetMidY(self.gifImageView.frame),textLabelSize.width+20, textLabelSize.height);
+        messageContentViewRect.size.width = self.gifImageView.frame.size.width+self.tipLabel.frame.size.width;
+        self.messageContentView.frame = messageContentViewRect;
+        title =@"您收到";
+        tip = @"+";
+    } else {
+        self.gifImageView.frame =
+        CGRectMake(0,0,GIFWIDTH , GIFWIDTH);
+        self.contenLabel.frame =CGRectMake(0,CGRectGetMaxY(self.gifImageView.frame),GIFWIDTH , ContentHeight);
+        self.tipLabel.frame =CGRectMake(0,CGRectGetMidY(self.gifImageView.frame),textLabelSize.width+20 , textLabelSize.height);
+        messageContentViewRect.size.width = self.gifImageView.frame.size.width;
+        messageContentViewRect.size.height = CGRectGetMaxY(self.contenLabel.frame);
+        messageContentViewRect.origin.x =
+        self.baseContentView.bounds.size.width -
+        (messageContentViewRect.size.width + HeadAndContentSpacing +
+         [RCIM sharedRCIM].globalMessagePortraitSize.width);
+        self.messageContentView.frame = messageContentViewRect;
+        title =@"您赠送";
+        tip = @"-";
+    }
+    if (testMessage) {
+        [self.gifImageView sd_setImageWithURL:URLFromString(testMessage.imageUri)];
+        self.contenLabel.text =FormatString(@"%@%@",title,testMessage.giftname);
+        self.tipLabel.text =FormatString(@"%@%@",tip,testMessage.price);
+        [self.tipLabel StartWithDuration: 2.0];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tipLabel StopWithDuration: 2.0];
+        });
+    }
 }
 
 @end
