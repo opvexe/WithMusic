@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		26932244B2D31134AFC3927C /* libPods-WithMusicUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D1C4C66D38F5DB1E239CCE /* libPods-WithMusicUITests.a */; };
 		9BC9FDFF2EA3DD7513B73F5C /* libPods-WithMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70445FBADE2B2FC04DD782ED /* libPods-WithMusic.a */; };
+		D00875B9201819F600F1CC9B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D00875B6201819F500F1CC9B /* Reachability.m */; };
+		D00875BA201819F600F1CC9B /* NetworkInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = D00875B7201819F500F1CC9B /* NetworkInformation.m */; };
 		D02828D22016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828D12016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m */; };
 		D02828D72016C48100EFACC1 /* LSWMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828D62016C48100EFACC1 /* LSWMLoginViewController.m */; };
 		D02828DB2016C60500EFACC1 /* LSWMNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D02828DA2016C60500EFACC1 /* LSWMNetworkUtil.m */; };
@@ -62,6 +64,10 @@
 		70445FBADE2B2FC04DD782ED /* libPods-WithMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WithMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F29AE21F92D3DC77527CA1 /* Pods-WithMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WithMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-WithMusic/Pods-WithMusic.release.xcconfig"; sourceTree = "<group>"; };
 		CA9053BE48C250E66A9AFA31 /* libPods-WithMusicTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WithMusicTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00875B5201819F500F1CC9B /* NetworkInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkInformation.h; sourceTree = "<group>"; };
+		D00875B6201819F500F1CC9B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D00875B7201819F500F1CC9B /* NetworkInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkInformation.m; sourceTree = "<group>"; };
+		D00875B8201819F600F1CC9B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D02828D02016C23C00EFACC1 /* LSWMessageCoversationListMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMessageCoversationListMViewController.h; sourceTree = "<group>"; };
 		D02828D12016C23C00EFACC1 /* LSWMessageCoversationListMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWMessageCoversationListMViewController.m; sourceTree = "<group>"; };
 		D02828D52016C48100EFACC1 /* LSWMLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWMLoginViewController.h; sourceTree = "<group>"; };
@@ -201,6 +207,10 @@
 		D02828E22016D35600EFACC1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D00875B5201819F500F1CC9B /* NetworkInformation.h */,
+				D00875B7201819F500F1CC9B /* NetworkInformation.m */,
+				D00875B8201819F600F1CC9B /* Reachability.h */,
+				D00875B6201819F500F1CC9B /* Reachability.m */,
 				D02828E32016D36700EFACC1 /* LSWMTools.h */,
 				D02828E42016D36700EFACC1 /* LSWMTools.m */,
 			);
@@ -701,7 +711,9 @@
 				D0CB5A412015D02A00B0A0D9 /* LSWMModel.m in Sources */,
 				D0CB5A3A2015C1DA00B0A0D9 /* AppDelegate+LSWMCategory.m in Sources */,
 				D02828F12016D71200EFACC1 /* MenuTableViewCell.m in Sources */,
+				D00875BA201819F600F1CC9B /* NetworkInformation.m in Sources */,
 				D02828DB2016C60500EFACC1 /* LSWMNetworkUtil.m in Sources */,
+				D00875B9201819F600F1CC9B /* Reachability.m in Sources */,
 				D02828F02016D71200EFACC1 /* MenuModel.m in Sources */,
 				D02828F22016D71200EFACC1 /* UIView+AdjustFrame.m in Sources */,
 				D0CB5A4A2015D46F00B0A0D9 /* Const.m in Sources */,
