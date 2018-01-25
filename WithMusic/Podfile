@@ -25,4 +25,5 @@ pod 'MJRefresh'
 pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'SDWebImage/GIF'
+pod 'ZLPhotoBrowser'
 end

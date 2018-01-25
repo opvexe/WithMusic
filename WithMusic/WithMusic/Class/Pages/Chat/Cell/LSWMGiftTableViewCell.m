@@ -11,7 +11,7 @@
 
 #define GIFWIDTH           90
 #define ContentHeight      20
-#define URLFromString(str)                      [NSURL URLWithString:str]
+
 
 @implementation LSWMGiftTableViewCell
 

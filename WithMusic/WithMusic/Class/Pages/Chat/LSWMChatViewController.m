@@ -8,9 +8,20 @@
 
 #import "LSWMChatViewController.h"
 #import "LSWMGiftTableViewCell.h"
+#import "LSWMLookQuestionModel.h"
+#import "LSWMSmallVideoModel.h"
 #import "LSWMGiftModel.h"
-@interface LSWMChatViewController ()
+#import "LSWMLookQuestionTipCell.h"
+#import "LSWMSmallVideoFileCell.h"
 
+#import <ZLPhotoActionSheet.h>
+#import <ZLPhotoConfiguration.h>
+#import <ZLPhotoManager.h>
+#import <Photos/Photos.h>
+#import "ZLCustomCamera.h"
+
+@interface LSWMChatViewController ()
+@property(nonatomic,strong)  ZLPhotoActionSheet *photoActionSheetView;
 @end
 
 @implementation LSWMChatViewController
@@ -19,7 +30,7 @@
     [super viewDidLoad];
     [self customCell];
     [self scrollToBottomAnimated:YES];
-
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
 }
 /*!
@@ -27,8 +38,32 @@
  */
 -(void)configView{
     
-     self.enableSaveNewPhotoToLocalSystem = YES;
+    self.enableSaveNewPhotoToLocalSystem = YES;
+    [self.chatSessionInputBarControl.pluginBoardView removeItemWithTag:PLUGIN_BOARD_ITEM_LOCATION_TAG];
+    [self.chatSessionInputBarControl.pluginBoardView insertItemWithImage:[UIImage imageNamed:@"Chat_Video_Icon"] title:@"小视频" tag:PLUGIN_BOARD_ITEM_SmallVide_TAG];
+    [self.chatSessionInputBarControl.pluginBoardView insertItemWithImage:[UIImage imageNamed:@"Chat_Rectangle_Icon"] title:@"向ta提问" tag:PLUGIN_BOARD_ITEM_AskTa_TAG];
+    [self.chatSessionInputBarControl.pluginBoardView insertItemWithImage:[UIImage imageNamed:@"Chat_Call_Video_Icon"] title:@"找ta上课" tag:PLUGIN_BOARD_ITEM_FindClasss_TAG];
+    [self.chatSessionInputBarControl.pluginBoardView updateItemWithTag:PLUGIN_BOARD_ITEM_ALBUM_TAG image:[UIImage imageNamed:@"Album_Icon"] title:@"相册"];
+    [self.chatSessionInputBarControl.pluginBoardView updateItemWithTag:PLUGIN_BOARD_ITEM_CAMERA_TAG image:[UIImage imageNamed:@"Chat_Video_Icon"] title:@"相机"];
     
+    
+    NSMutableDictionary *contentPamra = [NSMutableDictionary dictionaryWithCapacity:0];
+    [contentPamra setValue:@"我这只是一个测试" forKey:@"content"];
+    [contentPamra setValue:@"您有一个问题已被导师查看" forKey:@"title"];
+    [contentPamra setValue:@"http://img0.imgtn.bdimg.com/it/u=2069423848,1745692628&fm=27&gp=0.jpg" forKey:@"imageUrl"];
+    [contentPamra setValue:@"88" forKey:@"price"];
+    NSString *durationStr =@"12:20";
+    CGFloat duration  = 0.0;
+    NSString *fileUrl = @"";
+    [contentPamra setValue:durationStr forKey:@"durationStr"];
+    [contentPamra setValue:fileUrl forKey:@"fileUrl"];
+    [contentPamra setValue:@(duration) forKey:@"duration"];
+    [contentPamra setValue:@"32" forKey:@"questionId"];
+    [contentPamra setValue:self.targetId forKey:@"receiveId"];
+    [contentPamra setValue:@(88888) forKey:@"send_Id"];
+    [contentPamra setValue:@(0) forKey:@"type"];
+    LSWMLookQuestionModel *contentd=[LSWMLookQuestionModel messageWithContent:contentPamra];
+    [self sendMessage:contentd pushContent:ReplyQuestionMessageDisPlayContent];
     
 }
 /*!
@@ -43,6 +78,8 @@
     [self.unReadButton setTitleColor:Maser_Color forState:UIControlStateDisabled];
     
     [self registerClass:[LSWMGiftTableViewCell class] forMessageClass:[LSWMGiftModel class]];
+    [self registerClass:[LSWMLookQuestionTipCell class] forMessageClass:[LSWMLookQuestionModel class]];
+    [self registerClass:[LSWMSmallVideoFileCell class] forMessageClass:[LSWMSmallVideoModel class]];
 }
 
 /*!
@@ -52,9 +89,187 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+
+-(void)showVideoFile{
+    self.photoActionSheetView = [[ZLPhotoActionSheet alloc] init];
+    ZLPhotoConfiguration *configuration = [ZLPhotoConfiguration defaultPhotoConfiguration];
+    configuration.sortAscending = YES;
+    configuration.allowSelectImage = NO;
+    configuration.allowSelectGif = NO;
+    configuration.allowSelectVideo = YES;
+    configuration.allowSelectLivePhoto = NO;
+    configuration.allowForceTouch = YES;
+    configuration.allowEditImage = NO;
+    configuration.allowEditVideo = YES;
+    configuration.allowSlideSelect = NO;
+    configuration.allowDragSelect = NO;
+    //设置相册内部显示拍照按钮
+    configuration.allowTakePhotoInLibrary = NO;
+    //设置在内部拍照按钮上实时显示相机俘获画面
+    configuration.showCaptureImageOnTakePhotoBtn = NO;
+    //设置照片最大预览数
+    configuration.maxPreviewCount = 100;
+    //设置照片最大选择数
+    configuration.maxSelectCount = 1;
+    configuration.maxVideoDuration  = 999999;
+    //单选模式是否显示选择按钮
+    configuration.showSelectBtn = YES;
+    //是否在选择图片后直接进入编辑界面
+    configuration.editAfterSelectThumbnailImage = NO;
+    //是否在已选择照片上显示遮罩层
+    configuration.showSelectedMask = NO;
+    //颜色，状态栏样式
+    configuration.selectedMaskColor = UIColorFromRGB(0xFF758C);
+    configuration.navBarColor =  UIColorFromRGB(0xffffff);
+    configuration.navTitleColor = MainTitle_Color;
+    configuration.bottomBtnsNormalTitleColor =  UIColorFromRGB(0xFF758C);
+    configuration.bottomBtnsDisableBgColor =  UIColorFromRGB(0xFF758C);
+    configuration.bottomViewBgColor =  UIColorFromRGB(0xffffff);
+    configuration.statusBarStyle = UIStatusBarStyleDefault;
+    //是否允许框架解析图片
+    configuration.shouldAnialysisAsset = YES;
+    configuration.exportVideoType = ZLExportVideoTypeMp4;
+    self.photoActionSheetView.configuration = configuration;
+    self.photoActionSheetView.sender = self;
+    WS(weakSelf)
+    [self.photoActionSheetView setSelectImageBlock:^(NSArray<UIImage *> * _Nonnull images, NSArray<PHAsset *> * _Nonnull assets, BOOL isOriginal) {
+        PHAsset *asset = assets.firstObject;
+        [ZLPhotoManager requestVideoForAsset:assets.firstObject completion:^(AVPlayerItem *item, NSDictionary *info) {
+            NSString *filePath = [info valueForKey:@"PHImageFileSandboxExtensionTokenKey"];
+            if (filePath && filePath.length > 0) {
+                NSArray *lyricArr = [filePath componentsSeparatedByString:@";"];
+                NSString *privatePath = [lyricArr lastObject];
+                NSMutableDictionary *contentPamra3 = [NSMutableDictionary dictionaryWithCapacity:0];
+                [contentPamra3 setValue:@"我这只是一个测试" forKey:@"content"];
+                [contentPamra3 setValue:@"我" forKey:@"title"];
+                [contentPamra3 setValue:@"http://img0.imgtn.bdimg.com/it/u=2069423848,1745692628&fm=27&gp=0.jpg" forKey:@"imageUrl"];
+                [contentPamra3 setValue:@"88" forKey:@"price"];
+                [contentPamra3 setValue:[ZLPhotoManager getDuration:asset] forKey:@"durationStr"];
+                [contentPamra3 setValue:@(asset.duration) forKey:@"duration"];
+                [contentPamra3 setValue:@"32" forKey:@"questionId"];
+                [contentPamra3 setValue:weakSelf.targetId forKey:@"receiveId"];
+                [contentPamra3 setValue:@(88888) forKey:@"send_Id"];
+                [contentPamra3 setValue:privatePath forKey:@"fileUrl"];
+                [contentPamra3 setValue:privatePath forKey:@"locationFileUrl"];
+                LSWMSmallVideoModel *addcontentd2=[LSWMSmallVideoModel messageWithContent:contentPamra3];
+                [weakSelf sendMessage:addcontentd2 pushContent:SmallVideoDisPlayContent];
+            }
+            
+        }];
+    }];
+    [self.photoActionSheetView showPhotoLibrary];
+}
+
+
+
+-(void)showVideoRecord{
+    ZLCustomCamera  *customCamra= [[ ZLCustomCamera alloc ] init];
+    customCamra.allowRecordVideo = YES;
+    customCamra.videoType  = ZLExportVideoTypeMp4;
+    customCamra.allowRecordVideo = NO;
+    customCamra.maxRecordDuration = 360;
+    customCamra.sessionPreset = ZLCaptureSessionPreset1280x720;
+    customCamra.circleProgressColor = Maser_Color;
+    customCamra.doneBlock = ^(UIImage *image, NSURL *videoUrl) {
+        WS(weakSelf)
+        [ZLPhotoManager saveVideoToAblum:videoUrl completion:^(BOOL suc, PHAsset *asset) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (suc) {
+                    
+                    [ZLPhotoManager requestVideoForAsset:asset completion:^(AVPlayerItem *item, NSDictionary *info) {
+                        NSString *filePath = [info valueForKey:@"PHImageFileSandboxExtensionTokenKey"];
+                        if (filePath && filePath.length > 0) {
+                            NSArray *lyricArr = [filePath componentsSeparatedByString:@";"];
+                            NSString *privatePath = [lyricArr lastObject];
+                            NSMutableDictionary *contentPamra3 = [NSMutableDictionary dictionaryWithCapacity:0];
+                            [contentPamra3 setValue:@"我这只是一个测试" forKey:@"content"];
+                            [contentPamra3 setValue:@"我" forKey:@"title"];
+                            [contentPamra3 setValue:@"http://img0.imgtn.bdimg.com/it/u=2069423848,1745692628&fm=27&gp=0.jpg" forKey:@"imageUrl"];
+                            [contentPamra3 setValue:@"88" forKey:@"price"];
+                            [contentPamra3 setValue:[ZLPhotoManager getDuration:asset] forKey:@"durationStr"];
+                            [contentPamra3 setValue:@(asset.duration) forKey:@"duration"];
+                            [contentPamra3 setValue:@"32" forKey:@"questionId"];
+                            [contentPamra3 setValue:weakSelf.targetId forKey:@"receiveId"];
+                            [contentPamra3 setValue:@(88888) forKey:@"send_Id"];
+                            [contentPamra3 setValue:privatePath forKey:@"fileUrl"];
+                            [contentPamra3 setValue:privatePath forKey:@"locationFileUrl"];
+                            LSWMSmallVideoModel *addcontentd2=[LSWMSmallVideoModel messageWithContent:contentPamra3];
+                            [weakSelf sendMessage:addcontentd2 pushContent:SmallVideoDisPlayContent];
+                        }
+                        
+                    }];
+                }
+            });
+        }];
+    };
+    [self presentViewController:customCamra animated:YES completion:nil];
+}
+
+
 #pragma mark RCPluginBoardViewDelegate
 
+- (void)pluginBoardView:(RCPluginBoardView *)pluginBoardView clickedItemWithTag:(NSInteger)tag {
+    
+    
+    switch (tag) {
+        case PLUGIN_BOARD_ITEM_SmallVide_TAG: {
+            
+            
+            
+            break;
+        }
+            
+        case PLUGIN_BOARD_ITEM_AskTa_TAG: {
+            
+            
+            
+            break;
+        }
+        case PLUGIN_BOARD_ITEM_FindClasss_TAG: {
+            
+            break;
+        }
+        default:
+            [super pluginBoardView:pluginBoardView clickedItemWithTag:tag];
+            break;
+    }
+    
+    
+}
 
+/*!
+ * 用户信息
+ */
+- (void)didTapCellPortrait:(NSString *)userId{
+    
+    
+    
+}
+
+/*!
+ * 点击分享
+ */
+-(void)didTapShareActionMessageCell:(RCMessageModel *)model{
+    
+    
+}
+
+/*!
+ * 点击消息
+ */
+-(void)didTapMessageCell:(RCMessageModel *)model{
+    
+    if ([model.content isMemberOfClass:[LSWMLookQuestionModel class]]) {
+        
+        
+    }else if ([model.content isMemberOfClass:[LSWMSmallVideoModel class]]) {
+        
+        
+    }else{
+        [super didTapMessageCell:model];
+    }
+}
 
 /*!
  * 显示
@@ -190,3 +405,4 @@
 }
 
 @end
+

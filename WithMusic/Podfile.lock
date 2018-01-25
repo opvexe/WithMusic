@@ -27,6 +27,8 @@ PODS:
   - SDWebImage/GIF (4.2.2):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - ZLPhotoBrowser (2.6.4):
+    - SDWebImage
 
 DEPENDENCIES:
   - AFNetworking
@@ -37,6 +39,7 @@ DEPENDENCIES:
   - RongCloudIM/IMLib
   - SDWebImage
   - SDWebImage/GIF
+  - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -46,7 +49,8 @@ SPEC CHECKSUMS:
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   RongCloudIM: f51b1ff9a289e3bc39da61921d6bdbd896d08c18
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  ZLPhotoBrowser: 2125e7b7ea328c959a5ead1204c83b3bb0f0bf5a
 
-PODFILE CHECKSUM: 7589b37323c5ea722fd1c7310f84e6571dca1b57
+PODFILE CHECKSUM: 68ad457593d572d51bcba3f55f8e36555690a9d5
 
 COCOAPODS: 1.4.0.beta.2

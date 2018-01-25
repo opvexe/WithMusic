@@ -11,6 +11,17 @@
 
 #define RONGCLOUD_IM_APPKEY @"cpj2xarlc1qqn"
 
+
+#define  PLUGIN_BOARD_ITEM_SmallVide_TAG 77777
+
+#define  PLUGIN_BOARD_ITEM_AskTa_TAG 888888
+
+#define  PLUGIN_BOARD_ITEM_FindClasss_TAG 99999
+/**
+ URL
+ */
+#define URLFromString(str)                      [NSURL URLWithString:str]
+
 /**
  字符
  */
@@ -38,4 +49,5 @@
 
 #define   Maser_Color  UIColorFromRGB(0xFF758C)
 #define   ButtonBGColor UIColorFromRGB(0x9367ff)
+#define   MainTitle_Color  UIColorFromRGB(0X323232)
 #endif /* LSThirdLibKeyDefines_h */

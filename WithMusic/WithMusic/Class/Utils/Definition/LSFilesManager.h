@@ -31,5 +31,6 @@
  */
 #import "LSWMUserDataSocure.h"
 #import "LSWMNetworkUtil.h"
+#import "NSString+LSWM.h"
 
 #endif /* LSFilesManager_h */
